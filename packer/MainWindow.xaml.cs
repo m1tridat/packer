@@ -11,7 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Microsoft.Win32;
+using System.IO;
 
 namespace packer
 {
@@ -23,6 +24,20 @@ namespace packer
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void BtnCompress_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = true;
+            if(openFileDialog.ShowDialog() == true)
+            {
+                foreach (string filename in openFileDialog.FileNames)
+                {
+                    lbFiles.Items.Add(Path.GetFileName(filename));
+                    filelist.Visibility = Visibility.Visible;
+                }
+            }
         }
     }
 }

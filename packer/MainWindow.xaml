@@ -4,9 +4,56 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:packer"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        xmlns:interop="clr-namespace:packer"
+        mc:Ignorable="d" Title="packer" Height="300" Width="480"
+        ResizeMode="CanMinimize"
+        Icon="logo.ico" 
+        WindowStartupLocation="CenterScreen"
+        MinWidth="480" MinHeight="300"
+        Background="#FF252525"
+        SizeToContent="Height">
+    <Grid VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="275"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="GridOpenFile" Grid.Row="0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnCompress" Grid.Column="0"
+            BorderBrush="{x:Null}" Background="Transparent" AllowDrop="True" Click="BtnCompress_Click">
+                <TextBlock 
+                Text="Drop files or click to open files for compress" 
+                TextAlignment="Center" 
+                Width="105" 
+                Height="49" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                TextWrapping="Wrap"
+                Cursor="Hand" Foreground="White"/>
+            </Button>
+
+            <Button x:Name="btnDecompress"
+            BorderBrush="{x:Null}" Background="{x:Null}" AllowDrop="True" Grid.Column="1">
+                <TextBlock 
+                    Text="Drop archive or click to open archive for decompress" 
+                    TextAlignment="Center"
+                    Width="105" 
+                    Height="49" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    TextWrapping="Wrap" 
+                    Cursor="Hand" Foreground="White"/>
+            </Button>
+        </Grid>
+        <Grid x:Name="filelist" Visibility="Collapsed" Grid.Row="1">
+            <ListBox Name="lbFiles">
+            </ListBox>
+        </Grid>
+
     </Grid>
 </Window>
