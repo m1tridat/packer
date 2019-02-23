@@ -1,0 +1,38 @@
+﻿<Page x:Class="packer.pages.FileOpen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:packer.pages"
+      mc:Ignorable="d" 
+      Background="#373737"
+      d:DesignHeight="275" d:DesignWidth="474"
+      Title="FileOpen">
+
+    <Grid AllowDrop="True"
+          x:Name="DropPanel"
+          ScrollViewer.VerticalScrollBarVisibility="Disabled">
+
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Button Click="ShowFolderBrowserDialog">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Image  Source="../assets/images/drag-logo.png"
+                        Height="140"
+                        Cursor="Hand"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            
+            <TextBlock Text="Drag file(s) here or click" TextAlignment="Center" FontSize="16" Foreground="White">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="15"
+                                      Opacity="0.4"
+                                      />
+                </TextBlock.Effect></TextBlock>
+        </StackPanel>
+        
+        
+    </Grid>
+</Page>

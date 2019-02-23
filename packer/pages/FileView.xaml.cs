@@ -11,21 +11,18 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using Microsoft.Win32;
-using System.IO;
-using packer.pages;
+using System.Windows.Shapes;
 
-namespace packer
+namespace packer.pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для FileView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class FileView : Page
     {
-        public MainWindow()
+        public FileView()
         {
             InitializeComponent();
-            mainFrame.Content = new FileOpen();
         }
     }
 }

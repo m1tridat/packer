@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:packer"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="styles/colors.xaml"/>
+                <ResourceDictionary Source="styles/buttons.xaml"/>
+                <ResourceDictionary Source="styles/texts.xaml"/>
+                <ResourceDictionary Source="styles/windows.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
