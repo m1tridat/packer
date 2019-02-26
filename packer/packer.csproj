@@ -87,6 +87,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="models\Archive.cs" />
     <Compile Include="models\Compress.cs" />
     <Compile Include="pages\FileOpen.xaml.cs">
       <DependentUpon>FileOpen.xaml</DependentUpon>
